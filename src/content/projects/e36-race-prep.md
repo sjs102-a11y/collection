@@ -15,7 +15,7 @@ specs:                   # delete any entry you do not need
     value: "[to be added]"
 gallery:
   - src: ../../assets/projects/e36-race-prep/remfinish.jpeg
-    alt: Lime Rock Test and Tune
+    alt:  Test and Tune
     caption: "[Lime Rock Test and Tune]"
   - src: ../../assets/projects/e36-race-prep/process-2.svg
     alt: "Placeholder photograph"
