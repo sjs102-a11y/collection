@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { site, withBase } from '../site';
+const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const featured = all.filter((p) => p.data.featured);
+const hero = featured[0] ?? all[0];
+const num = (p) => String(all.indexOf(p) + 1).padStart(3, '0');
+---
+<Base>
+  <section class="hero">
+    <h1>{site.name}</h1>
+    <p class="lede">{site.tagline}</p>
+    {hero && <figure>
+      <Image src={hero.data.cover} alt={hero.data.coverAlt} widths={[800, 1400, 2000]} sizes="100vw" loading="eager" />
+      <figcaption class="meta">{hero.data.title}</figcaption>
+    </figure>}
+  </section>
+
+  <section class="wrap">
+    <h2 class="sec">Selected projects</h2>
+    <div class="grid">
+      {featured.map((p) => <ProjectCard entry={p} num={num(p)} />)}
+    </div>
+    <p class="more"><a href={withBase('/projects/')}>See the full archive</a></p>
+  </section>
+
+  <section class="wrap narrow">
+    <h2 class="sec">Approach</h2>
+    <p>[Two or three sentences in your own words about how you work: what you build, how you test it, and what you document. Replace this text in src/pages/index.astro.]</p>
+    <p><a href={withBase('/about/')}>About</a>{site.instagram && <> &nbsp; <a href={site.instagram} rel="noopener">Instagram</a></>} &nbsp; <a href={withBase('/contact/')}>Contact</a></p>
+  </section>
+</Base>

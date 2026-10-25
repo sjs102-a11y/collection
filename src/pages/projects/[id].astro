@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { withBase } from '../../site';
+export async function getStaticPaths() {
+  const all = await getCollection('projects');
+  return all.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+---
+<Base title={d.title} description={d.summary}>
+  <article class="wrap project">
+    <p class="meta"><a href={withBase('/projects/')}>Projects</a> &nbsp; {d.category} &nbsp; {d.status}{d.date && <> &nbsp; {d.date}</>}</p>
+    <h1 class="page">{d.title}</h1>
+    <p class="lede">{d.summary}</p>
+    <figure class="heroimg">
+      <Image src={d.cover} alt={d.coverAlt} widths={[800, 1400, 2000]} sizes="100vw" loading="eager" />
+    </figure>
+    <div class="cols">
+      {d.specs.length > 0 && (
+        <aside aria-label="Specifications">
+          <h2 class="sec">Specifications</h2>
+          <dl>
+            {d.specs.map((s) => <><dt>{s.label}</dt><dd>{s.value}</dd></>)}
+          </dl>
+          {d.instagram && <p><a href={d.instagram} rel="noopener">Related Instagram post</a></p>}
+        </aside>
+      )}
+      <div class="prose"><Content /></div>
+    </div>
+    {d.gallery.length > 0 && (
+      <section>
+        <h2 class="sec">Photographs</h2>
+        <div class="gallery">
+          {d.gallery.map((g) => (
+            <figure>
+              <Image src={g.src} alt={g.alt} widths={[600, 1000, 1600]} sizes="(min-width: 800px) 50vw, 100vw" />
+              {g.caption && <figcaption class="meta">{g.caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      </section>
+    )}
+  </article>
+</Base>

@@ -1,0 +1,35 @@
+---
+import '../styles.css';
+import { site, withBase } from '../site';
+const { title, description = site.description } = Astro.props;
+const full = title ? `${title} | ${site.name}` : site.name;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{full}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={full} />
+    <meta property="og:description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="bar">
+      <a class="mark" href={withBase('/')}>{site.name}</a>
+      <nav aria-label="Main">
+        <a href={withBase('/projects/')}>Projects</a>
+        <a href={withBase('/about/')}>About</a>
+        <a href={withBase('/contact/')}>Contact</a>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="foot">
+      <span>{site.name}</span>
+      <span class="meta">Project archive, in progress</span>
+      {site.instagram && <a href={site.instagram} rel="noopener">Instagram</a>}
+    </footer>
+  </body>
+</html>

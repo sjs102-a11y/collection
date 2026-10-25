@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+import { withBase } from '../site';
+const { entry, num } = Astro.props;
+const d = entry.data;
+---
+<article class="card" data-cat={d.category}>
+  <a href={withBase(`/projects/${entry.id}/`)}>
+    <Image src={d.cover} alt={d.coverAlt} widths={[480, 800, 1200]} sizes="(min-width: 800px) 33vw, 100vw" />
+    <p class="meta">No. {num} &nbsp; {d.category} &nbsp; {d.status}</p>
+    <h3>{d.title}</h3>
+    <p>{d.summary}</p>
+  </a>
+</article>

@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../site';
+---
+<Base title="Contact">
+  <section class="wrap narrow prose">
+    <h1 class="page">Contact</h1>
+    {site.email
+      ? <p>Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      : <p>[No public email set. Add one in src/site.ts if you want it shown.]</p>}
+    {site.instagram
+      ? <p>Instagram: <a href={site.instagram} rel="noopener">{site.instagram}</a></p>
+      : <p>[Instagram link not set yet. Add it in src/site.ts.]</p>}
+  </section>
+</Base>
