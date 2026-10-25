@@ -14,9 +14,9 @@ specs:                   # delete any entry you do not need
   - label: "1.8 NB Spec Miata"
     value: "[to be added]"
 gallery:
-  - src: ../../assets/projects/spec-miata/process-1.svg
-    alt: "Placeholder photograph"
-    caption: "[Caption: what this photo shows]"
+  - src: ../../assets/projects/spec-miata/racewin.png
+    alt: "Race win"
+    caption: "Willow Springs International Race Win"
   - src: ../../assets/projects/spec-miata/process-2.svg
     alt: "Placeholder photograph"
     caption: "[Caption: what this photo shows]"
