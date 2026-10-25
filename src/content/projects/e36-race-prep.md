@@ -6,8 +6,8 @@ status: "Ongoing"        # Ongoing, Completed, or Paused
 date: ""                 # optional, e.g. "2025"
 featured: true           # true shows it on the home page
 order: 1                # lower numbers come first
-cover: ../../assets/projects/e36-race-prep/cover.svg
-coverAlt: "Placeholder for the cover photograph"
+cover: ../../assets/projects/e36-race-prep/cover.png
+coverAlt: Test and Tune at Lime Rock
 specs:                   # delete any entry you do not need
   - label: "Vehicle"
     value: "BMW E36"
