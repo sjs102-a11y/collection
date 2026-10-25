@@ -1,6 +1,6 @@
 ---
-title: "BMW E36 endurance race preparation"
-summary: "Preparing a BMW E36 for endurance racing."
+title: "BMW E36 ChampCar"
+summary: "Preparing a BMW E36 for ChampCar endurance racing."
 category: "Motorsports"
 status: "Ongoing"        # Ongoing, Completed, or Paused
 date: ""                 # optional, e.g. "2025"
@@ -11,7 +11,7 @@ coverAlt: Test and Tune at Lime Rock
 specs:                   # delete any entry you do not need
   - label: "Vehicle"
     value: "BMW E36"
-  - label: "Key details"
+  - label: "student built"
     value: "[to be added]"
 gallery:
   - src: ../../assets/projects/e36-race-prep/remfinish.jpeg
@@ -25,24 +25,24 @@ gallery:
 
 ## Background
 
-[What is this project, and what situation or problem started it?]
+Work within limited time and budget.
 
 ## Goals and constraints
 
-[What did it need to do? Budget, time, rules, materials, or tools that limited you.]
+Led engineering and vehicle development for REM’s BMW E36 ChampCar endurance racing project, balancing performance, reliability, and a limited budget.
 
 ## Approach
 
-[How you decided what to do. Alternatives you considered.]
+Prioritized reliability, serviceability, and practical engineering solutions while improving team organization and accountability.
 
 ## Process
 
-[What you actually did, in order.]
+Led vehicle development as Vice President and Chief Engineer
 
 ## What went wrong
 
-[Failures, revisions, and what you learned.]
+inconsistencies in execution
 
 ## Result and remaining work
 
-[What it is like now, and what is still to do.]
+Gained hands-on experience in race-car engineering, team leadership, and technical operations. Established more structured maintenance workflows while continuing to develop the car and team.
